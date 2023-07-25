@@ -3,36 +3,54 @@
 
 #Parent class
 class Mammal:
-    def mammal_info(self):
-        print("Mammals can give direct birth.")
 
-    def move(self):
-        print("Mammals move on land.")
+    species = "Unknown"
+    num_legs = 0
+    has_hair = False
+    diet = "Unknown"        
 
 #Child class
 class WingedAnimal(Mammal):
-    def winged_animal_info(self):
-        print("Winged animals can flap.")
 
-# Overrides the move method to provide an implementation of Wingedanimal class
-    def move(self):
-        print("Winged animals can fly.")
-        
+    wing_span = 0
+    can_swim = False
+
 #Child class
 class Bat(WingedAnimal):
-    def bat_info(self):
-        print("Bats are nocturnal.")
+    
+    is_nocturnal = False
+    echolocation = False
 
-# Move method from WingedAnimal class will be used
-    def move(self):
-        print("Bats can move both on land and fly in the air.")
+# create an object of Mammal class
+human = Mammal()
+human.species = "Human"
+human.num_legs = 2
+human.has_hair = True
+human.diet = "Carnivore"
+
+
+# create an object of WingedAnimal class
+eagle = WingedAnimal()
+eagle.species = "Eagle"
+eagle.num_legs = 2
+eagle.diet = "Carnivore"
+eagle.wing_span = 180
+eagle.can_swim = True
 
 # create an object of Bat class
-b1 = Bat()
+brown_bat = Bat()
+brown_bat.species = "Brown Bat"
+brown_bat.num_legs = 2
+brown_bat.has_hair = True
+brown_bat.diet = "Insectivore"
+brown_bat.wing_span = 25
+brown_bat.can_swim = True
+brown_bat.is_nocturnal = True
+brown_bat.echolocation = True
 
-#Invokes methods inside each class
-b1.mammal_info() #Inherited from Mammal class
-b1.winged_animal_info() #Defined in WingedAnimal
-b1.bat_info() #Defined in bat
-b1.move() #Inherited from WingedAnimal
+#Accessing the attributes
+print(human.diet)
+print(eagle.can_swim)
+print(brown_bat.echolocation)
+
     
