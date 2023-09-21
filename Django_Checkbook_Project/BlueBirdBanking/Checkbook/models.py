@@ -3,6 +3,7 @@ from django.db import models
 
 #Creates the account model
 class Account(models.Model):
+
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     initial_deposit = models.DecimalField(max_digits=15, decimal_places=2)
